@@ -1,4 +1,4 @@
-# Welcome to CAPTCHA break tutorial !
+#Obeject_detection.py
 
 # Imports
 import cv2
@@ -126,5 +126,4 @@ def Captcha_detection(image, average_distance_error=3):
                 captcha_string += captcha_array_filtered[captcha_letter][0]
                 
             return captcha_string
-
-print(Captcha_detection(sys.argv))
+print(Captcha_detection(sys.argv[1]))
