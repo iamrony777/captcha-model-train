@@ -16,129 +16,82 @@ item {
 }
 item {
   id: 5
-  name: 'e'
-}
-item {
-  id: 6
   name: 'f'
 }
 item {
-  id: 7
+  id: 6
   name: 'g'
 }
 item {
-  id: 8
+  id: 7
   name: 'h'
 }
 item {
-  id: 9
+  id: 8
   name: 'i'
 }
 item {
-  id: 10
+  id: 9
   name: 'j'
 }
 item {
-  id: 11
+  id: 10
   name: 'k'
 }
 item {
-  id: 12
+  id: 11
   name: 'l'
 }
 item {
-  id: 13
+  id: 12
   name: 'm'
 }
 item {
-  id: 14
+  id: 13
   name: 'n'
 }
 item {
-  id: 15
+  id: 14
   name: 'o'
 }
 item {
-  id: 16
+  id: 15
   name: 'p'
 }
 item {
-  id: 17
+  id: 16
   name: 'q'
 }
 item {
-  id: 18
+  id: 17
   name: 'r'
 }
 item {
-  id: 19
+  id: 18
   name: 's'
 }
 item {
-  id: 20
+  id: 19
   name: 't'
 }
 item {
-  id: 21
+  id: 20
   name: 'u'
 }
 item {
-  id: 22
+  id: 21
   name: 'v'
 }
 item {
-  id: 23
+  id: 22
   name: 'w'
 }
 item {
-  id: 24
+  id: 23
   name: 'x'
 }
 item {
-  id: 25
+  id: 24
   name: 'y'
 }
-item {
-  id: 26
-  name: 'z'
-}
-item {
-  id: 27
-  name: '0'
-}
-item {
-  id: 28
-  name: '1'
-}
-item {
-  id: 29
-  name: '2'
-}
-item {
-  id: 30
-  name: '3'
-}
-item {
-  id: 31
-  name: '4'
-}
-item {
-  id: 32
-  name: '5'
-}
-item {
-  id: 33
-  name: '6'
-}
-item {
-  id: 34
-  name: '7'
-}
-item {
-  id: 35
-  name: '8'
-}
-item {
-  id: 36
-  name: '9'
-}
+

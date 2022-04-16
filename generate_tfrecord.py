@@ -20,7 +20,7 @@ from PIL import Image
 from object_detection.utils import dataset_util
 from collections import namedtuple, OrderedDict
 
-os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
+# os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
 
 flags = tf.compat.v1.app.flags
 flags.DEFINE_string('csv_input', '', 'Path to the CSV input')
@@ -39,70 +39,46 @@ def class_text_to_int(row_label):
         return 3
     if row_label == 'd':
         return 4
-    if row_label == 'e':
-        return 5
     if row_label == 'f':
-        return 6
+        return 5
     if row_label == 'g':
-        return 7
+        return 6
     if row_label == 'h':
-        return 8
+        return 7
     if row_label == 'i':
-        return 9
+        return 8
     if row_label == 'j':
-        return 10
+        return 9
     if row_label == 'k':
-        return 11
+        return 10
     if row_label == 'l':
-        return 12
+        return 11
     if row_label == 'm':
-        return 13
+        return 12
     if row_label == 'n':
-        return 14
+        return 13
     if row_label == 'o':
-        return 15
+        return 14
     if row_label == 'p':
-        return 16
+        return 15
     if row_label == 'q':
-        return 17
+        return 16
     if row_label == 'r':
-        return 18
+        return 17
     if row_label == 's':
-        return 19
+        return 18
     if row_label == 't':
-        return 20
+        return 19
     if row_label == 'u':
-        return 21
+        return 20
     if row_label == 'v':
-        return 22
+        return 21
     if row_label == 'w':
-        return 23
+        return 22
     if row_label == 'x':
-        return 24
+        return 23
     if row_label == 'y':
-        return 25
-    if row_label == 'z':
-        return 26
-    if row_label == '0':
-        return 27
-    if row_label == '1':
-        return 28
-    if row_label == '2':
-        return 29
-    if row_label == '3':
-        return 30
-    if row_label == '4':
-        return 31
-    if row_label == '5':
-        return 32
-    if row_label == '6':
-        return 33
-    if row_label == '7':
-        return 34
-    if row_label == '8':
-        return 35
-    if row_label == '9':
-        return 36
+        return 24
     else:
         None
 
