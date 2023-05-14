@@ -1,0 +1,21 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "--csv_input=CAPTCHA_images/test_labels.csv",
+                "--image_dir=CAPTCHA_images/test",
+                "--output_path=CAPTCHA_images/test.record"
+            ]
+        }
+    ]
+}

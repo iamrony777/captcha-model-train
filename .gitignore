@@ -1,0 +1,4 @@
+.venv
+CAPTCHA_images/images
+init
+config/tasks.json
