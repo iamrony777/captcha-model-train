@@ -1,19 +1,15 @@
 FROM python:3.7.16-bullseye
 
 WORKDIR /app
-COPY config data /app/
-COPY setup.py requirements-utils.txt /app/
+COPY config /app/config
+COPY data /app/data
+COPY setup.py requirements-utils.txt start.sh /app/
 
 RUN pip install -U pip setuptools wheel
 
 RUN pip install -r requirements-utils.txt
 
+ENV PORT=8080
 EXPOSE 8080
-
-RUN ls -lla /app
-
-RUN python setup.py create-tasks /app/data
-
-RUN python setup.py run-studio --project-name captcha-label
-
-CMD python setup.py run-studio --project-name captcha-label
+RUN chmod +x start.sh
+CMD [ "./start.sh" ]

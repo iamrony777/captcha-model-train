@@ -112,23 +112,19 @@ def run_studio(
             "init",
             project_name,
             "-b",
-            "--internal-host",
-            "localhost",
             "-l",
             label_config,
             "--username",
-            os.getenv('USERNAME', "admin"),
+            os.getenv('USERNAME', "admin@localhost"),
             "--password",
-            os.getenv('PASSWORD', "admin"),
+            os.getenv('PASSWORD', "admin")
         ]
     else:
         command = [
             "label-studio",
             "start",
             project_name,
-            "-b",
-            "--internal-host",
-            "localhost",
+            "-b"
         ]
 
 
@@ -155,10 +151,16 @@ def run_studio(
             executable=executable,
             check=True,
         )
-        if "start" not in command:
-            logging.info(
-                "Exceuted `python setup.py run-studio` again to start Label-Studio"
-            )
+    else:
+        executable = subprocess.run('which label-studio', shell=True, capture_output=True).stdout.decode('utf-8').strip()
+
+        subprocess.run(
+            command,
+            env=env,
+            cwd=local_files_document_root,
+            executable=executable,
+            check=True,
+        )
 
 
 @cli.command()
