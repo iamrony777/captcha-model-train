@@ -7,3 +7,5 @@
 2023-05-14 00:38:31,709 [INFO] File Filter Regex: .*json
 2023-05-14 00:43:57,629 [INFO] Dataset Abolute path: /home/rony/captcha-model-train/CAPTCHA_images/images
 2023-05-14 00:43:57,629 [INFO] File Filter Regex: .*json
+2023-05-14 09:31:05,476 [INFO] Dataset Abolute path: /home/rony/Projects/captcha-model-train/data/
+2023-05-14 09:31:05,476 [INFO] File Filter Regex: .*json

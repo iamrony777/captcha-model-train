@@ -57,7 +57,7 @@ def check_if_first_run(path: str = "config/init"):
 @cli.command()
 def create_tasks(
     input_dir: str = typer.Argument(help="Input directory, where images are stored"),
-    pre_annotations: str = typer.Option(help="Path to pre-annotations file"),
+    pre_annotations: str = typer.Option(None, help="Path to pre-annotations file"),
     local_files_document_root: str = typer.Option(
         os.getcwd(), help="Same as `LABEL_STUDIO_LOCAL_FILES_DOCUMENT_ROOT`"
     ),
@@ -101,6 +101,7 @@ def run_studio(
     label_config: str = "config/label-config.xml",
     local_files_serving_enabled: bool = True,
     local_files_document_root: str = os.getcwd(),
+    data_dir: str = None,
 ):
     """
     Runs LabelStudio locally.
@@ -115,6 +116,10 @@ def run_studio(
             "localhost",
             "-l",
             label_config,
+            "--username",
+            os.getenv('USERNAME', "admin"),
+            "--password",
+            os.getenv('PASSWORD', "admin"),
         ]
     else:
         command = [
@@ -125,14 +130,20 @@ def run_studio(
             "--internal-host",
             "localhost",
         ]
+
+
+    if data_dir is not None:
+        os.makedirs(data_dir, exist_ok=True)
+        command.append("--data-dir")
+        command.append(data_dir)
+
+
     logging.info(" ".join(command))
     env = {}
     if local_files_serving_enabled:
-        # env.insert(0, 'LABEL_STUDIO_LOCAL_FILES_SERVING_ENABLED=true')
         env["LABEL_STUDIO_LOCAL_FILES_SERVING_ENABLED"] = "true"
 
         if local_files_document_root:
-            # env.insert(0, 'LABEL_STUDIO_LOCAL_FILES_DOCUMENT_ROOT=' + local_files_document_root)
             env["LABEL_STUDIO_LOCAL_FILES_DOCUMENT_ROOT"] = local_files_document_root
 
     if os.getenv("VIRTUAL_ENV"):
