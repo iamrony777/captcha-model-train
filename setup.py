@@ -164,7 +164,7 @@ def run_studio(
 
 
 @cli.command()
-def generate_csv(dataset: str, output: str = "dataset.csv"):
+def generate_csv(dataset: str = typer.Argument(help="Exported project annotations from label-studio, use JSON-MIN format while exporting"), output: str = typer.Option("data/dataset.csv", help="Path to generated CSV file")):
     """
     Generates .csv file for generating TFRecords.
     """
@@ -180,18 +180,20 @@ def generate_csv(dataset: str, output: str = "dataset.csv"):
             i = 0
 
             for _class in classes:
+
                 captcha_data.append(
                     (
                         el["image"].split("/")[-1],
                         el["box"][i]["original_width"],
                         el["box"][i]["original_height"],
                         _class,
-                        el["box"][i]["x"],
-                        el["box"][i]["y"],
-                        el["box"][i]["x"] + el["box"][i]["width"],
-                        el["box"][i]["y"] + el["box"][i]["height"],
+                        round(el["box"][i]["x"]),
+                        round(el["box"][i]["y"]),
+                        round(el["box"][i]["x"] + el["box"][i]["width"]),
+                        round(el["box"][i]["y"] + el["box"][i]["height"]),
                     )
                 )
+                i += 1
         except KeyError as e:
             logging.error(
                 f'KeyError: id => {el["id"]}, image => { el["image"].replace("/data/local-files/?d=/", "")}'

@@ -12,9 +12,9 @@
             "console": "integratedTerminal",
             "justMyCode": true,
             "args": [
-                "--csv_input=CAPTCHA_images/test_labels.csv",
-                "--image_dir=CAPTCHA_images/test",
-                "--output_path=CAPTCHA_images/test.record"
+                "--csv_input=dataset.csv",
+                "--image_dir=data",
+                "--output_path=data/tfrecords/data.tfrecord"
             ]
         }
     ]
