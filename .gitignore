@@ -1,9 +1,11 @@
 .venv
 init
 data/*.json
-export.json
+result.json
 tfrecord-viewer
 dataset.csv
 train
 setup.log
 test.py
+data/tfrecords/*
+data/cv/*

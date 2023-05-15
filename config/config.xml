@@ -1,0 +1,6 @@
+<View>
+  <Header>Label the captcha:</Header>
+  <TextArea name="solved_captcha" toName="captcha" value="$text" editable="true" placeholder="Type the following captcha here"/>
+  <Image name="captcha" value="$image" zoom="true"/>
+  <Rectangle name="box" toName="captcha"/>
+</View>
