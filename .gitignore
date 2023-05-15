@@ -6,3 +6,4 @@ tfrecord-viewer
 dataset.csv
 train
 setup.log
+test.py
