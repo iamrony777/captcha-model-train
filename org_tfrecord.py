@@ -57,9 +57,6 @@ def split(df, group):
 
 
 def create_tf_example(group, path):
-    # with tf.io.gfile.GFile(os.path.join(path, '{}'.format(group.filename)), 'rb') as fid:
-    # encoded_jpg = fid.read()
-    # encoded_jpg_io = io.BytesIO(encoded_jpg)
     image = cv2.imread(os.path.join(path, "{}".format(group.filename)))
     _, image_data = cv2.imencode(".png", image)
     image_bytes = image_data.tobytes()
