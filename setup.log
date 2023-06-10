@@ -1,9 +1,0 @@
-2023-05-14 00:05:47,713 [INFO] label-studio init captcha-recognition -b --internal-host localhost -l config/label-config.xml
-2023-05-14 00:06:06,546 [INFO] Exceuted `python setup.py run-studio` again to start Label-Studio
-2023-05-14 00:06:17,183 [INFO] label-studio start captcha-recognition -b --internal-host localhost
-2023-05-14 00:25:47,841 [INFO] Dataset Abolute path: /home/rony/captcha-model-train/tasks
-2023-05-14 00:25:47,842 [INFO] File Filter Regex: .*json
-2023-05-14 00:38:31,709 [INFO] Dataset Abolute path: /home/rony/captcha-model-train/CAPTCHA_images/images
-2023-05-14 00:38:31,709 [INFO] File Filter Regex: .*json
-2023-05-14 00:43:57,629 [INFO] Dataset Abolute path: /home/rony/captcha-model-train/CAPTCHA_images/images
-2023-05-14 00:43:57,629 [INFO] File Filter Regex: .*json
