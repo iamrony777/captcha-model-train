@@ -1,5 +1,7 @@
 import asyncio
 import logging as log
+import os
+from platform import platform
 import sys
 from PIL import Image
 from io import BytesIO
@@ -42,17 +44,25 @@ async def main():
     start = 0
 
     for dirname, _, filenames in walk(IMAGE_DIR):
-        start = int(filenames[-1].removeprefix("captcha_").removesuffix(".png")) + 1
+        try:
+            start = int(filenames[-1].removeprefix("captcha_").removesuffix(".png")) + 1
+        except IndexError:
+            start = 0
     
-    stop  = start + 10
+    stop  = start + 100
 
-    # for i in range(start, stop):
-    #     async with AsyncClient() as client:
-    #         response = await client.get("https://javdb.com/rucaptcha")
-    #         img = Image.open(BytesIO(response.content))
-    #         img.save(path.join(IMAGE_DIR, f"captcha_{i}.png"), "PNG", optimize=True, quality=100, )
+    for i in range(start, stop):
+        async with AsyncClient() as client:
+            response = await client.get("https://javdb.com/rucaptcha")
+            img = Image.open(BytesIO(response.content))
+            img.save(path.join(IMAGE_DIR, f"captcha_{i}.png"), "PNG", optimize=True, quality=100, )
+
+    if platform() == "win32":
+        log.info(f"RUN: ./bin/labelImg.exe {IMAGE_DIR} {CLASS_FILE}")
+    else:
+         log.info('RUN: python labelImg/labelImg.py {} {}'.format(IMAGE_DIR, CLASS_FILE))
 
 
 if __name__ == "__main__":
     asyncio.run(main())
-    log.info('RUN: labelImg {} {} {}'.format(IMAGE_DIR, CLASS_FILE, SAVE_DIR))
+   

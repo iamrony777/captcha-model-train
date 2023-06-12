@@ -1,0 +1,3 @@
+-i https://pypi.org/simple
+httpx[http2]==0.24.1
+pillow==9.5.0
